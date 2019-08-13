@@ -1,0 +1,14 @@
+c:\Projects\WinPGP\WinPGP\bin\Debug\WinPGP.exe.config
+c:\Projects\WinPGP\WinPGP\bin\Debug\WinPGP.exe
+c:\Projects\WinPGP\WinPGP\bin\Debug\WinPGP.pdb
+c:\Projects\WinPGP\WinPGP\bin\Debug\PGP.dll
+c:\Projects\WinPGP\WinPGP\bin\Debug\BouncyCastle.Crypto.dll
+c:\Projects\WinPGP\WinPGP\bin\Debug\PGP.pdb
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.csprojAssemblyReference.cache
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.MainForm.resources
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.Properties.Resources.resources
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.csproj.GenerateResource.cache
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.csproj.CoreCompileInputs.cache
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.csproj.CopyComplete
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.exe
+c:\Projects\WinPGP\WinPGP\obj\Debug\WinPGP.pdb

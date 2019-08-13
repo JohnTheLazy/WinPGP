@@ -1,0 +1,8 @@
+c:\Projects\WinPGP\PGP\bin\Debug\PGP.dll
+c:\Projects\WinPGP\PGP\bin\Debug\PGP.pdb
+c:\Projects\WinPGP\PGP\bin\Debug\BouncyCastle.Crypto.dll
+c:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CoreCompileInputs.cache
+c:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CopyComplete
+c:\Projects\WinPGP\PGP\obj\Debug\PGP.dll
+c:\Projects\WinPGP\PGP\obj\Debug\PGP.pdb
+c:\Projects\WinPGP\PGP\obj\Debug\PGP.csprojAssemblyReference.cache

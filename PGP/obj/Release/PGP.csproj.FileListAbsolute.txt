@@ -1,0 +1,7 @@
+c:\Projects\WinPGP\PGP\bin\Release\PGP.dll
+c:\Projects\WinPGP\PGP\bin\Release\PGP.pdb
+c:\Projects\WinPGP\PGP\bin\Release\BouncyCastle.Crypto.dll
+c:\Projects\WinPGP\PGP\obj\Release\PGP.csproj.CoreCompileInputs.cache
+c:\Projects\WinPGP\PGP\obj\Release\PGP.csproj.CopyComplete
+c:\Projects\WinPGP\PGP\obj\Release\PGP.dll
+c:\Projects\WinPGP\PGP\obj\Release\PGP.pdb
