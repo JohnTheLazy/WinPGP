@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KeyGeneration.cs" />
+    <Compile Include="KeyGenerator.cs" />
     <Compile Include="Keys.cs" />
-    <Compile Include="Decryption.cs" />
-    <Compile Include="Encryption.cs" />
+    <Compile Include="Decryptor.cs" />
+    <Compile Include="Encryptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

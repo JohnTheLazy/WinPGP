@@ -3,25 +3,16 @@ using Org.BouncyCastle.Bcpg.OpenPgp;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Utilities.IO;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PGP
 {
-    public class Decryption
+    public class Decryptor
     {
         private const int BufferSize = 0x10000; // should always be power of 2
 
         #region Encrypt
-
-        /*
-         * Encrypt the file.
-         */
-
         public static void EncryptFile(string inputFile, string outputFile, string publicKeyFile, bool armor, bool withIntegrityCheck)
         {
             try
@@ -69,15 +60,9 @@ namespace PGP
                 MessageBox.Show(ex.Message);
             }
         }
-
         #endregion Encrypt
 
         #region Encrypt and Sign
-
-        /*
-         * Encrypt and sign the file pointed to by unencryptedFileInfo and
-         */
-
         public static void EncryptAndSign(string inputFile, string outputFile, string publicKeyFile, string privateKeyFile, string passPhrase, bool armor)
         {
             Keys encryptionKeys = new Keys(publicKeyFile, privateKeyFile, passPhrase);
@@ -131,8 +116,8 @@ namespace PGP
 
         private static void WriteOutputAndSign(Stream compressedOut, Stream literalOut, FileStream inputFile, PgpSignatureGenerator signatureGenerator)
         {
-            int length = 0;
             byte[] buf = new byte[BufferSize];
+            int length;
             while ((length = inputFile.Read(buf, 0, buf.Length)) > 0)
             {
                 literalOut.Write(buf, 0, length);
@@ -172,22 +157,15 @@ namespace PGP
             {
                 PgpSignatureSubpacketGenerator subPacketGenerator = new PgpSignatureSubpacketGenerator();
                 subPacketGenerator.SetSignerUserId(IsCritical, userId);
-                pgpSignatureGenerator.SetHashedSubpackets(subPacketGenerator.Generate());
-                // Just the first one!
+                pgpSignatureGenerator.SetHashedSubpackets(subPacketGenerator.Generate()); // Just the first one!
                 break;
             }
             pgpSignatureGenerator.GenerateOnePassVersion(IsNested).Encode(compressedOut);
             return pgpSignatureGenerator;
         }
-
         #endregion Encrypt and Sign
 
         #region Decrypt
-
-        /*
-       * decrypt a given stream.
-       */
-
         public static void Decrypt(string inputfile, string privateKeyFile, string passPhrase, string outputFile)
         {
             if (!File.Exists(inputfile))
@@ -207,10 +185,6 @@ namespace PGP
                 }
             }
         }
-
-        /*
-        * decrypt a given stream.
-        */
 
         public static void Decrypt(Stream inputStream, Stream privateKeyStream, string passPhrase, string outputFile)
         {
@@ -337,11 +311,11 @@ namespace PGP
         #endregion Decrypt
 
         #region Private helpers
-
-        /*
-        * A simple routine that opens a key ring file and loads the first available key suitable for encryption.
-        */
-
+        /// <summary>
+        /// A simple routine that opens a key ring file and loads the first available key suitable for encryption.
+        /// </summary>
+        /// <param name="inputStream"></param>
+        /// <returns></returns>
         private static PgpPublicKey ReadPublicKey(Stream inputStream)
         {
             inputStream = PgpUtilities.GetDecoderStream(inputStream);
@@ -363,10 +337,13 @@ namespace PGP
             throw new ArgumentException("Can't find encryption key in key ring.");
         }
 
-        /*
-        * Search a secret key ring collection for a secret key corresponding to keyId if it exists.
-        */
-
+        /// <summary>
+        /// Search a secret key ring collection for a secret key corresponding to keyId if it exists.
+        /// </summary>
+        /// <param name="pgpSec"></param>
+        /// <param name="keyId"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
         private static PgpPrivateKey FindSecretKey(PgpSecretKeyRingBundle pgpSec, long keyId, char[] pass)
         {
             PgpSecretKey pgpSecKey = pgpSec.GetSecretKey(keyId);
@@ -376,7 +353,6 @@ namespace PGP
 
             return pgpSecKey.ExtractPrivateKey(pass);
         }
-
         #endregion Private helpers
     }
 }

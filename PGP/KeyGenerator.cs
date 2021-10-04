@@ -6,15 +6,11 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Math;
 using Org.BouncyCastle.Security;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PGP.KeyGeneration
+namespace PGP
 {
-    public class KeyGeneration
+    public class KeyGenerator
     {
         public static void GenerateKey(
             string username,

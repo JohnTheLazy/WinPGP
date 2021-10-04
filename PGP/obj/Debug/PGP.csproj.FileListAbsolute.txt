@@ -12,4 +12,3 @@ D:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CoreCompileInputs.cache
 D:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CopyComplete
 D:\Projects\WinPGP\PGP\obj\Debug\PGP.dll
 D:\Projects\WinPGP\PGP\obj\Debug\PGP.pdb
-D:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.AssemblyReference.cache

@@ -1,5 +1,4 @@
 ﻿using PGP;
-using PGP.KeyGeneration;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +35,7 @@ namespace WinPGP
             {
                 try
                 {
-                    KeyGeneration.GenerateKey(UsernameTextBox.Text, PassphraseTextBox.Text, @Application.StartupPath);
+                    KeyGenerator.GenerateKey(UsernameTextBox.Text, PassphraseTextBox.Text, @Application.StartupPath);
 
                     PrivateKeyTextBox.Text = File.ReadAllText(_privateKeyPath);
                     PublicKeyTextBox.Text = File.ReadAllText(_publicKeyPath);
@@ -64,7 +63,7 @@ namespace WinPGP
                     _publicKeyPath,
                     _privateKeyPath,
                     EncryptPassPhraseTextBox.Text);
-                Encryption encrypter = new Encryption(encryptionKeys);
+                Encryptor encrypter = new Encryptor(encryptionKeys);
                 using (Stream outputStream = File.Create(_encryptedDataPath))
                 {
                     encrypter.EncryptAndSign(outputStream, new FileInfo(_plainTextPath));
@@ -84,7 +83,7 @@ namespace WinPGP
                 File.WriteAllText(_plainTextPath, DecryptPlainTextBox.Text);
                 File.WriteAllText(_privateKeyPath, DecryptPrivateTextBox.Text);
 
-                Decryption.Decrypt(_encryptedDataPath,
+                Decryptor.Decrypt(_encryptedDataPath,
                     _privateKeyPath,
                     DecryptPassphraseTextBox.Text,
                     _plainTextPath);
