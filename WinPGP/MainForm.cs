@@ -32,16 +32,23 @@ namespace WinPGP
 
         private void GenerateButton_Click(object sender, EventArgs e)
         {
-            try
+            if (!string.IsNullOrWhiteSpace(UsernameTextBox.Text) && !string.IsNullOrWhiteSpace(PassphraseTextBox.Text))
             {
-                KeyGeneration.GenerateKey(UsernameTextBox.Text, PassphraseTextBox.Text, @Application.StartupPath);
+                try
+                {
+                    KeyGeneration.GenerateKey(UsernameTextBox.Text, PassphraseTextBox.Text, @Application.StartupPath);
 
-                PrivateKeyTextBox.Text = File.ReadAllText(_privateKeyPath);
-                PublicKeyTextBox.Text = File.ReadAllText(_publicKeyPath);
+                    PrivateKeyTextBox.Text = File.ReadAllText(_privateKeyPath);
+                    PublicKeyTextBox.Text = File.ReadAllText(_publicKeyPath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                UsernameTextBox.Focus();
             }
         }
 

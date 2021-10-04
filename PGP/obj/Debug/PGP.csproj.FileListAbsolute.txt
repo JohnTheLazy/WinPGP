@@ -5,3 +5,11 @@ c:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CoreCompileInputs.cache
 c:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CopyComplete
 c:\Projects\WinPGP\PGP\obj\Debug\PGP.dll
 c:\Projects\WinPGP\PGP\obj\Debug\PGP.pdb
+D:\Projects\WinPGP\PGP\bin\Debug\PGP.dll
+D:\Projects\WinPGP\PGP\bin\Debug\PGP.pdb
+D:\Projects\WinPGP\PGP\bin\Debug\BouncyCastle.Crypto.dll
+D:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CoreCompileInputs.cache
+D:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.CopyComplete
+D:\Projects\WinPGP\PGP\obj\Debug\PGP.dll
+D:\Projects\WinPGP\PGP\obj\Debug\PGP.pdb
+D:\Projects\WinPGP\PGP\obj\Debug\PGP.csproj.AssemblyReference.cache
